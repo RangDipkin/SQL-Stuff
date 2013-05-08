@@ -1,9 +1,12 @@
 delimiter $
 
 drop procedure if exists Dijkstra;
-
 /*
-
+ Given some table called 'graph' which represents an undirected, weighted graph; this algorithm reads 
+ some vertex as a parameter, then calculates the shortest path to every other vertex on the graph.  
+ It then outputs every vertex on the graph along with its total path distance into a table called 
+ 'paths'.
+ 
  This is an implementation of Dijkstra algorithm on some directed graph G.
  G is stored as a relational table: 
 
@@ -47,8 +50,8 @@ begin
 		-- for each v in V-S do
 			-- D[v]<-MIN(D[v],D[w]+l(w,v))
 
-		/* calculator is used as a temporary stopping point for library, required because some of the things in library
-		   are what we want, and cannot delete them quite yet */
+		/* calculator is used as a temporary stopping point for library, required because some of the vertexes in library
+		   are valid paths, and cannot delete them quite yet */
 		
 		-- insert all those values not currently in the either the library or the calculator
 		insert into calculator(select v2, (select max(d) from paths) + weight 
@@ -79,12 +82,7 @@ begin
 		insert into library(select * from calculator);
 		delete from calculator;
 		
-		-- for testing purposes only
-		-- if (num_uneval_nodes < (select count(*) from library)) then set num_uneval_nodes=0;
-		
 		select count(*) into num_uneval_nodes from library;
-		
-		-- end if;
 	end while;
 end
 $

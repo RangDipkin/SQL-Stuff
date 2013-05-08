@@ -4,7 +4,7 @@ drop procedure if exists MaxOccurrence;
 
 /*
 
-This procedure is used to find the elements with the maximumu
+This procedure is used to find the elements with the maximum
 occurrences in some table t. t is assumed to be a single-column table
 with the following structure:
 
@@ -14,7 +14,7 @@ with the following structure:
 | id         | char(1)   | YES       |          |              |            |
 + ---------- + --------- + --------- + -------- + ------------ + ---------- +
 
-The output of this procedure should be a two-column table. The first
+The output of this procedure is a two-column table. The first
 column contains variables with maximum occurrence; and the second
 column contains the corresponding ocurrence count.
 
@@ -24,7 +24,7 @@ column contains the corresponding ocurrence count.
 -- IMPORTANT!! to find the elements with the max # of occurences, run the following query:
 -- select * from maxes;
 
--- also, I copied a couple lines from the mysql online reference manual related to: 
+-- also, I copied a couple lines from the mySQL online reference manual related to: 
 -- 'declare continue handler for not found set done = true'
 create procedure MaxOccurrence()
 begin

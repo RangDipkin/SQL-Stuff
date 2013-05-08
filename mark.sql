@@ -3,6 +3,7 @@ delimiter $
 drop procedure if exists Mark;
 /*
 
+ 
  This procedure returns pairs (node, depth) where depth is the depth
  of the node. A tree T has the following structure in your database:
 
@@ -13,7 +14,7 @@ drop procedure if exists Mark;
  | c     | integer | YES  |     | NULL    |       |
  +-------+---------+------+-----+---------+-------+
 
- Create a table depth_marks(v integer, d integer) and save all results in it.
+ Creates a table depth_marks(v integer, d integer) and save all results in it.
 
 */
 
@@ -32,7 +33,7 @@ begin
 	
 	set tier = 0;
 	
-	/* this should hopefully grab the root node and put it into depth_marks */	
+	/* this should grab the root node and put it into depth_marks */	
 	insert into depth_marks values(root, 0);
 	
 	select count(*) into num_children from pTree T, depth_marks DM where DM.node = T.p; 

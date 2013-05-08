@@ -3,10 +3,9 @@ drop procedure if exists Leaves;
 delimiter $
 
 /*
-
- This program finds all the leaves from tree of Problem 1, and put
- them into a table named all_leaves.
-
+ Given some tree called 'tree', this algorithm reads some node as a parameter, then inserts all edges
+ which are linked to that node or descendants of that node into a table called 'tc'.  Make sure that 'tree' follows this format: 
+ (parent integer, child integer).
 */
 
 
@@ -14,6 +13,7 @@ create procedure Leaves(v integer)
 begin
 	declare num_new_edges integer;
 	
+	-- p = parent, c = child
 	create table if not exists tc(p integer, c integer);
 	create table if not exists tcnew(p integer, c integer);
 	create table if not exists all_leaves(v integer);
@@ -33,6 +33,7 @@ begin
 		
 		delete from tcnew;
 		
+		-- step down the tree (increase depth)
 		insert into tcnew(select tc.p, tree.c from tc, tree where tc.c = tree.p);
 		
 		delete from tcnew where(tcnew.p, tcnew.c) in (select * from tc);
