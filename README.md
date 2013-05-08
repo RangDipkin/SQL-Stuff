@@ -16,4 +16,6 @@ mark.sql      -- Given some tree called 'tree', and the root as a parameter. Thi
                  Make sure that 'tree' follows the format:
                  (parent integer, child integer).
 
-max_occur.sql --
+max_occur.sql -- Given some table of characters called 't', this algorithm finds the maximum number of repetitions of 
+                 any given char in the table, and lists the characters which are at that maximum; these outputs go into a 
+                 table called 'maxes'.  This was an exercise in using mySQL loop structures.
