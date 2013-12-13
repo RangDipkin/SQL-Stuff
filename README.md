@@ -1,4 +1,4 @@
-SQL-Stuff
+SQL-Stuff (Travis Pressler)
 =========
 
 dijkstra.sql  -- Given some table called 'graph' which represents an undirected, weighted graph; this algorithm reads 
