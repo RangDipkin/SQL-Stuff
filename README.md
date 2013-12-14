@@ -20,69 +20,83 @@ max_occur.sql -- Given some table of characters called 't', this algorithm finds
                  any given char in the table, and lists the characters which are at that maximum; these outputs go into a 
                  table called 'maxes'.  This was an exercise in using mySQL loop structures.
 
-.                                                                                                   
-                                                                                                    
-          .                                                                                         
-                                          .....,,:,..,,                                             
-                            .         :Tvm#imK99$GbrzE..vv,  .v.                                    
-                                  .:D@#@@U :5Gb$ww93:..::,.:,:.,v,:::v,.                            
-                               ..r3ri,vr....,:,:v...:,:.  ..  .,. TDSv:,.                           
-                             .C3v,   r7F0$993wrFv,U8Dm,.,BDS,,r99:.    .,7:,.                       
-                            .Kr... ,8w9WWK$8Be,T,vg9zz.v9e7,.:7, ...:. .,..,,                       
-                         ,KSKv:5CviEG0Bm7vEK57S9rr::7:.::.  .:  :m:v,,r::,,v,T,                     
-                        vvv ..:eUG99#WeK7.7Q3UQrFS,::.7eCriGSF$Q#m08Ger.::9SC                       
-                        ,.,iwKzEgBm@m. ,v:.7.@Bv9BBre$D$88D7SE7K:,.5@#97. :GmC,,                    
-                       rUD#DG$8W#B#K      .. 7Fv0@wDQ99K::.         .G8#v.:::r.                     
-                      ,39U9mQ#NQ8U.   ..       .v:.. ..               38:  v:z3.                    
-                    :vFFvKGG@DU0b                                      9BC, ,:7r                    
-                    ,S9w#9wBBKb#.                                       mBmU:F.:.                   
-                     .7w3,WBgW@m                                        .8Cr:,v::                   
-                      K5 3$BB#8.     .                                   BwF,.v.,.                  
-                     .E,rW$8QN7     ..                                   .#BB..#z                   
-                     :FvD@Bbb07. ..   ..                                  @#mr,5.                   
-                     v3e#G7E90v ..:  ..                                   mQwrvT                    
-                     v9Q09KUEU,.....   ...                                 Qw8U.                    
-                     7U0BBE39r7.. .     ..... .                            9@K7,                    
-                     TSS3iU$G3,F, ,,                                    .  .mSr5.  ..               
-                     Ci9e.7BGUme ,z,              .     . ...  ..,:CF3wiz,  wW#.  ...               
-                    rr, .C9Qg58. ,:..  ..::::Sw58@@Wbe:.:C..,U$#8BGwK9$mDDS.U$F  .   .              
-                    7z#@73@Q#87   .vE,KNQmeCUK58#BWDU3UC$r..9@#5EUb9izC3z7U T$S   .                 
-                   .C.ve::W@#g: ,rr$z:SBKzemDw77eBwS35Dv   ,@@$bF##@@z7r,K7 :#7                     
-                    v,..:,K0Qb  ,:v:: :E8Be#@@E,Kv,:b9z.    559377KF7T99vr, :#v.                    
-                    ..,WU0U.90 ...   ,wvrmv:,,,v:TSC, ..    T..3bDBW#@WF:,   FC                     
-.                   .7.K,:9,emv.T:    .K9UGDgmBmG:    .,    r.    ....      v.r                     
-.                    Ti,. :,. :,9U..        ..     .....     v.            .r,7                     
-. .                   :85,Ue. ::ebC..              .,,:..    ,r           ,K:v:                     
-.                      ,.  :Kr,:rmi:..           .BC .,.       :#.        g5..                      
-. .                     v7. ,Wv,7veF:::.       .U$@z           S@WK       Kv                        
-                         ,v,.vF.r,,3rT::..    78U..i9GBDe3F9w999..Cm.     7,                        
-. . .                         SF...CvTv:v...,CG,  ,7F58D$Gmmi,,,,  .B,.,..v                         
-                               B3..S:.::,r,75G.    ..,,:,F7:.7r77v. ,F.:: T#U0Bwmm9DwG5$597vzv..    
-. .                            :m7:zF. 7:rCG9:  ,:v::,v7:. .T7FC7SBbE:,v: e@QmWNQ#@@@@@@@#@@@@@@@@3 
-                              v@g5:vE: :v.:F:FU$B#NQBBmW0N$mESiivC33r .C. #@#89mg0D##B0@BG9WWBB0#@w 
-                             .#@#vBrK9. C, : Ez,,z8g$iT,. .  .,,v:S,  KF .@##8gGS9N@BmQNmB8W#WWB#@7 
-.                          7K,m#B.FB9er  v::     .rUmiCr.. ..Tv7Kev .ge...B@@8BBG30@$8w#B5@DQ##Q@8  
-.                        v@@7.KN7.,rmG8:  ,rv  ..   :C9GW#NNWUS7:   rT.,@3.Q@#W#D9W0g5D0@3$D#89$@0  
-                       .#@@K,v:gvT.,7eB#DF:r3. ... . ...:33Cv.   ..   7@QGv.5@##080WN####5BNNW5mG   
-                .    ,W@@@m.7K:#:C..,,rCDW8SUb:         ..,.. .     .K@@g8U. .@###BmNW0B#0NB0B$9,   
-     . .       .    G@@@@@r.vKvD:7v .,::,Tw85#B,....         ..    .D@@@0N7.  .@@@G$UBGW##$G0Nr,    
-                  .@@@#0@#, ,7vrS U.,,,v3r7UzC#@8Sz:,,.    .,. ,5rU#9K##N,$NQD .@#BN$8Bb#mWBBS.     
-.        .       .@@@88@0. ,,:C.5.:z ,.,:U7CS77mBBBB9GmiKKe3iDQ@85WG,m@N3:@@#@5 C@0###WGNmmS        
-. .   .   .     v@Q5mmbQv .,v,F::$ U..,,,:7TSrrT7vzSU9$ebB@##$53r7iv7W@B57@W#br, 0@G#$GBQBD.        
-  .  . .      .g@Qw5m7zG,..::,,3.vG,F.,,,::r7Cr7Sr7FC7,v:7v:,,.:v::,:D@GUTg#@Q:.:v@eBmUNmw9         
-. . . .     z0@@#B#Bm90#z.,,C..7v z3C7,vv:,,,,vrr,vrKT7TCvTv,:::,,:,r9@#i v@@@9,, 8#BBBBg9.         
-.    .   ,W####Qb0B5D@0@#7..:,..7r r7b. ,rv,.,,,,:,v,,,::rv7:T:::..:z5##8,.iNQ0v,.,@z5bQE.          
-. .    :@@#B8Qm9BW8$m$B#@B. .:. :r. 7U5. :zrv:::rCv:rT7C3Tv::,,:,.:CrD#9B$e..75iv. QQ9N#        .   
-. .  ,@@@0wg0B$Q##$E9Db8@@3,.v:..C. .KE9..emCr..,:,:vUzTr7rv:rr:T7:T:@9rKCUmb: r:. 9#mQ:            
-.   i@@gm9SUU9wUbvKGmCBBQ@#,.... ..  :rKF,.T$wv... .,v7vvvvv77v3v..T7@rvie5Cw8.v,. v#UF             
-   b@wrv:vvv,,,v:TUeCK973#@e .  ....,7F:,:, 7b9E,,,,.,:SrSrrv795,..rC@zCwKv,r9FS,  .#B:             
-. :K......... ..,v9KiU3Srb@@: .,7v70@@#B83v:FeCwzv:,. .,.,vvr73,,,r,F@9vzr,v.rvv,  .@W,             
-. .            . .,r:,FbFEN@#,,i38@@#$3UWNGr.3m5EGKT:.    .:3v   :r:B@F,:v:7,3v.   .@#              
-. . . . . . .     ...:,.w8F#@mvvU@@$G93e3SGG5vT7U9QW#BC:,....   .v7:W@m.T7v7ET.    S@B              
-.  ..... ..... .    .. .C$UvB#S :@BBUKC0bC:Tv#9:7::mG:TeSz:,....:v ,W@E.:r:r9:.   .@@.              
-. ... . . ..... .     ...r3r30Qv.#09U,vr5$9BvSrB@C.z.   ..,.....,, .@@evv:vKe,.   Q@z               
-. .. ......... ... .     ..:rKQ@,G0vv:,.veb99E7rm.,m53v.   .......  m@:v:,:iv.    K,                
-. . . ........... . .       v,Smb:@3:7STSTzEC7KCe3:vmQB$S,.       . :8,,..... .                     
-  .. ............... . . . .     i#5:v7:v,.,:,,..... r,UmmFr.. . .             .                    
-. ................... ......                                                                        
-.                                                                                                   
+```                                                                                
+                                                    :G;t;:G7G22; .Cx;                                                        
+                                   ..          ;tO;SNE5EsSxQSSS8t2K: :tx;:  .2t,                                             
+                                           ..s#NMNMNC 585Qg#ggbQsO;.C;;:,:;;;;.,2,;..,;,:                                    
+                                         ;Z80M@GK@7  .:xQ9COO:;t. ..,,;. ::... :, :gK0S:t:                                   
+                                      :7:Ct.:  ,;.:Q25,.: ;Ct.,,CgQx7. .O;:  .,t. .x7..::.::                                 
+                                    .9sCt;   .9gx@MbgEEE#b257;QN#0EC :Z#NKst:O08@D:      ,,Cxt:,                             
+                                   .Gt: ,:, Q#@t#b@GQ@#S9.;2::@K575;:sQ57;,.tCO,  ,.;t:. ,:. .;,.                            
+                                OOsb5tZ07;CbxQ@b@95tD9tE0t0G2;tCtZ2::;;;   .t.  .92.tt,Ott;:,;;;7s.                          
+                              t;87,...7@809ss@MEQD7.tSNQt0#xOSt.Ct, CZ2::;t;;t0#@@9KZ7t5,:t:gtx;                             
+                              t:, .7t7tGsKb0@MQt7ZZ5.0E;bMs,gO79;7CsbDZgbM@QK@#EKsQ#NM@Stt:,;b5E;,..                         
+                             ,t,tS#E08D@M@QNMG  ..::.;; NMO5D@MGGg@EK@#KEt.tx::t... xNNb02; .7Q95;;:                         
+                            ,52#NMDS@@@@#@#@;        ,, txx;MM09@#g7gt.::..           9b#M;,t;;:t;                           
+                           .txEK0QK#M#M@#g2     .         . Z2,:: .;                   :#st  t7;C2t                          
+                          :tZG;:8K@MN@QNE:                                              t#5;. .;t08;                         
+  .                     ,2520Zg@@s@NgO@#Z                                                Z#b@x,,7 ;t.                        
+                          t5KSNZZ#EEQgN#                                                  0@sEStx0.7                         
+                           ttEx.KN@#N#MO                                                  .ES:t;;:ttt                        
+                           ;E9 t@@E@@MD.      .                                            g#OG,,7: ;;.                      
+                          .7b,:#gE@#Ng:. .   .,                                            .#Q@S:.G@x                        
+                          .Dt:8M@#EE@g;.     .  .                                           KM@#2::M;                        
+                          :87s@N#SgSNDt.. :    .. .                                         KN@gCt2G                         
+                          .b;EN@tsQGND. ..::   .   .                                        .NbS0:G;                         
+                          ,sb#NDx090bt:...,,      .                                          C#s@gG                          
+                          O8bMg@@sO8tx;....,     ....,,. ...                                 .NMKDt                          
+                          tt7EbK2QESDC;;: .,.                                                 xNttt0. . .                    
+                          ;g57C2sEg@Q;tg: :t,                            ..            .,,,,  .@DGD0   . .                   
+                          ZZs@b..g@SSS#C :tx.       .        ,:,        ...   ..;;tZ89gKE9Z;,  8EN@   . .     .              
+                         xt.  :St#E#SEE .:;t,. . ...::;;tsQS@MMM@@SZ. ,2, .;OEEMNM@@S8Q@bg@@9t.8gg,                          
+                        .GxNME.7MN@N@S;   .:,D.,QE#@EQQgE@N##EE@Kx7sx2#b;.,x#M#gOtOOt;t27Q2tgt O@G;                          
+                        ,2.ZDME7@MN#@E.  : QD820@#Q7t;tt;,tsE#EEQQ98G7;.  tNNMQgEMNMNMbO52tOxt :NSt                          
+                        .0.,t.. S#M@#G..C5O5g;,.ZbG0@NMNMMxZGDbt;O0bg.    ;MMKKs:9E@@#O;0C,25; ;Mx;                          
+                         t7 ,:2t;8E@@, ,,::;:;..DD@MtQ@M## tQt,:7@gt;      55sss5OxxOtt889tCt  :N0,.                         
+                         .; g@D@@;.0M:..;..   .b0.;85,:.,.t;::Z87:. ..     x:,tg@@#@NNMM@Ot;.   tQ;                          
+                         .Z 5E,2@g.9MZ;.;t ..   tE9Sb#@E88bE@S; .   ::     5.    .;ttt;,       ;;;t                          
+. .                       ss .:  :tt;,x 0D..     :;;.,C5DGG:.   ,, .;.     ,t,                 O.,t                          
+                           xbZ,.55,. .2:8SO,.,                 ..,,.,.      ;;               .;Ot7;                          
+. .                         xE#t.bK. .O:D9g:,                   ,,:t;,.     .D;              E2,:;                           
+                             ;    O5tt;t78Q2:,,.              OM; .;;,       . 8N:          D#5..                            
+. .                          .x;;  t#x:;O7QQ7;;;,           tEMN.              DMND         2Zt                              
+                               5Q: .9E,,G;:Gxt;t;. .      tK@7,C8t:;tt:,,:,t2G9@;:S#;       ;G,                              
+.                                :;, ;Q.tt,tst2ttt;,.   .t#S:  ;x8@NM##@b##E9xZ:,  :@G .,.. tt                               
+                                      @2.; ;G;;O;;;;,,,;xE;  ..CG7ZQGQDsQ0GC:,:t:.  ,@2..;,.:t  .                            
+. .                                   2@9,.,0t,,t:;t7:D9bt      ..::t:;ZQt;,772O5x;  ,Q,.tO. #@9#NEE#@Eb#b@E@@EK97Os7:.      
+                                       GKOttDZ, :Q;Z7ZKDZ   .,;;::,.tt,,   ;2Ztttt5SZ2O,t;t..MMEb@ME#MMMMMNMNMMMNMNMNMMMN#b. 
+                                      ;@89O,5s;..t;;:S5Cx,tsbEKgbgE@@#@E9ZQ8ss@KO0E#@8; 7;; ONMN#s9#@@@#MN#E#N#9K@N####@MNM  
+                                     OMMN0g;tKs: tx, 5:.98#K9E###@SSZ9QgKb0ttt;:;;,:.,  2G: @M####KSEN@@NM8#MN8#99#@bg@#@MM  
+                                    .b#MM.E@OO9Z .OG ,t GZ.  ;5@Kg52;,      .t;t7t0g;  Zbt  @M#M#@@@72@MMg@@N#EEM###MN@@M@E  
+                                 .0S:tN#N.:g@8OQ:  ;x;t  .   .;s0@G2C;,... :tt;7G8G. ,#@t .::MNM#K#b@sEMNENg@M@DNNgNNM#MMM   
+.                               #NM2:.ME2::;GbKK0   ,t2;   .,    t5gE@#NM#N@EQ9DO    QQ; ,Mb 7MNN@NME8@@N@@0##M58@@##8K@MMt  
+                              xMNMs:t.b8;x.;;5s@MEx;:;29: .,...,..,::;5KgQQD;.    .,   .tMN85:GMNM@M@8N##@@MNNMbg#@M#E5@@;   
+                      .     tNM#Mb:;Q:s#;5,.;Cx2Q@M@9OtO7., .      .,.,:tt:.,,. ...   ;xMNEEG7  @NM#M#MEMNMNN#Mg@NM#EEbSD    
+                   . .    sMMMNMN,;xs77M,Z7...,tttxg#@DsNE,           .,.,..         ;sMMM@#@G   bN##M#g@E@#@@NMN@E@#bKZ   . 
+        .         ..     #MNMNMMN.:;s7x@;;g..,;;;;;;Zg@8@NG:;.;,,           :;:  .  t@MNMN@M0;..  ZNMN#S#x@KE#M#@K8@#5:.     
+       .               tNMNM##NMb.,:22:Dx O7 t;;;Gx2OZD2t@NN87tt:,::      :t,  .95:ENbO@NMN:O@@#@C sMM@@Mb@@EbN@EM@#8t,      
+.                     2NMNNENNMO .;:CtC,@..E..,.:;Z9Oxs5ZOg#M#EE92Z2O;t;;:::;Z@N#QENS:xNM@E.MNM#M@, NM@###M#E9N88gZ:.        
+     .     .         5NMN@EEMMs  :;t:7D.s@ Z5 ;;:,,t5tCGtt7xODs@QEEM#K@ENMNMMMM#QDSS2tSMM@S.NMN#@Ms. MNMNM#ME@N@Eg:          
+. .   .   .         @NNZKg@80E; ,.:t:;Gt.@s b..:;;t:722ZG2CCGtttttOGxCGDEKK8Gtttt72OtOENM8#7M#@NKt.G tM@5#@OK#@KEG           
+       . .       .sMMEESg@2xs@:.;:;t:,tx. M7:g,;;::;;;7xtOOxsOO5GG2t;ttOt;:;;:;tOt;t:;QNMs8;8M#MNg:,G.MMx#@0E#8Q8O           
+. .    ..      t@MMMN@NM#b9bMNZ ;;;x; tZt .#;Zx:tCt;;;;;tt72t;tCxSDODOGOtOt:;;;t::t;;tQ@M@Q .@M#Mb5,:.tM@#@@@@@0s            
+       .    ,gNMM#MME@@#0KM#NMEt,;:t;..;x7 ,StSt ;;OC;,.,:.:t;,t;;.;;;;tt7O;t7;tt:;:ts5N#M@. 2NM@N0;;, #NtKKEK@s             
+. . .     ;#MNb@##ES8#@b@@#@#NM@:..:t, .tZ; ;G0b. .;7ttCttO;;CttCOt;CxZO2;7;t::;; ::s20NNbNE7:.G@@#;t:.tMSgDNN;              
+. ..    ;NNMKE@@N@5@@N@#89EEbMMMZ: .t;, ;C:. 729g, ;2D7;;:.ttDtt;C22Z25ttC;;;;;t;:ttZ;bMgD8bbbt,,ts0tt.,N#Q@MQ               
+. ...  NMNN#ES@#E@#NMNN9QQ@S#bMN@tt,7:t.:Ot  .SCbQ;.C@8Gx:,.;:::;t5stt27Gttt7xO;xOt:7;N#t29Oxsb#S :tt,. ##bE@                
+. .  tMM@#gK2G059g00@77gE#28@#@MN0:;:::: ::   tQ7SZt..QE87,:,,. .;CtttttttCC77tQt. :2tN@.5xDS8xDN;.O;., S#x9;                
+.   8M@D5O2Ox27tx;;7C;xQDGt@KsK#MN, ,,   .,.  .t:tt;t  ZEb0x::::;;:txGOZtt2OxOD9: .;xCM@;Q89Dt;s88Cs; , 2M0@                 
+.  Z@7;t,:::,;,...;;:7Dg5sQ0ttt8MM@ .. ,:2t;9@#M@xO7;7.25GQg;C;;...,:t;tZOtt;SSx:;:x;7NN;Q92t;t:ts;Z: . 7Mbg                 
+. ,;; ... ... ... ..,;20Z2Qt@s5QMNMs ,,GDCCMMNME##MEZCtDEZx85Zt;;.. .,..:;ts2O,.,:C7,0M#tOtx;;x.tZ,t..  tNMG                 
+  .                . ..;tt,tQKxQSMNMt:O9x@NM@NEQt0EN@8;.t@E0SK85;t;.    .,;0t,   :t7:MN@;;;t;ZttxZ;     :MN;                 
+. ... . . . . ...     ... t;;:9@DxMN@2t7ZMM@E8b50Ds7gE#bt,xQSS#N#@#Zt:,.. ...   .t72t@MMt:7xCtDZQ.: .   gNM.                 
+. .. . . ......... . .   ,:. .Q@K2Z#@b,;tM#E@50ssMGOtttDN#t 7;;5#NG9QgG2;:::,::.;O:.;@NM:,ttt;79;;     tNMx                  
+. . . . ... ..... . . .     ,,:ZS7:S#@Z ,NMg@027DE#8C80 SDg#E@ CO,. .;;tC;,.... ;;. 7NMN;Ott7;Gg;t.    NME                   
+. .. ... ......... . . .   ..,.;tGsO9M@8 gN0sZ;:t:2@@5NDO5,EM2 tst,,     ...,,,,::. ,MN@,x;t,7QG:,    5M@:                   
+. . . . ........... ... .       ..:C78MNttMZCt7C;:7tgQGD00OtS;.0gbS5t.    ..,......  SMs,C;:;tZ;,.    t.                     
+.  . . . ........... . . .        .tt;@@# N#O;Ox77xx;Ss7t5OGs9t,7E@E@g7;.         .. ,Nx;t,;,.. ..                           
+. .   ................. . . .     .     .S#MQttZ5;5t;;Ox;tt;C;:;..gxC#@K05t.  .....   . .                                    
+   . . ................... . . ...        tt... ,  .                  ,C;,:,.                                                
+. .   . ..................... . ...                                                                                          
+                                                                                                                          
+                                                                                                                             ```
